@@ -1,0 +1,31 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="latest.css" media="screen" />
+	<title></title>
+</head>
+<body>
+<div id="tnt-radar" class="radiator">
+	<h1>tnt-radar</h1>
+	<div id="build" class="tnt-radar" from="http://s028:8080/job/tnt-radar/api/json" with="jenkins" threshold="100"></div>
+
+	<div id="coverage" class="tnt-radar" from="http://s028:9000/api/resources?resource=br.com.tnt:tnt-radar&amp;metrics=coverage" with="sonar" threshold="100"></div>
+
+	<div id="violations_density" class="tnt-radar" from="http://s028:9000/api/resources?resource=br.com.tnt:tnt-radar&amp;metrics=violations_density" with="sonar" threshold="0"></div>
+</div>
+
+<div id="tnt-core" class="radiator">
+	<h1>tnt-core</h1>
+	<div id="build" class="tnt-core" from="http://s028:8080/job/tnt-core/api/json" with="jenkins" threshold="100"></div>
+	
+	<div id="coverage" class="tnt-core" from="http://s028:9000/api/resources?resource=br.com.tnt:tnt-core&amp;metrics=coverage" with="sonar" threshold="10"></div>
+
+	<div id="violations_density" class="tnt-radar" from="http://s028:9000/api/resources?resource=br.com.tnt:tnt-radar&amp;metrics=violations_density" with="sonar" threshold="100"></div>
+</div>
+
+</body>
+<script type="text/javascript">
+        setTimeout(function() {
+        	location.reload();    
+        }, 2000); 
+</script>
+</html>
