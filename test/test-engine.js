@@ -21,13 +21,4 @@ describe('Engine', function(){
       });
     });
   })
-  it('should delete all pages', function(done){
-    fs.writeFileSync("./lib/pages/mockage.html", template);
-    engine.deletePages(function(){
-      fs.readdir("./lib/pages/", function(err, files) {
-        assert.equal(1, files.length);
-        done();
-      });
-    });
-  })
 })

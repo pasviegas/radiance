@@ -5,6 +5,7 @@ var coverageRed = [{msr: [{val: 0}]}];
 var yellow = {color: "yellow"};
 
 var green = {color: "blue"};
+var travisGreen = {lastBuildStatus: 0};
 var coverageGreen = [{msr: [{val: 100}]}];
 
 var fakeRequests = function(){
@@ -44,6 +45,9 @@ var fakeRequests = function(){
 
 	nock('http://s028:9000').get('/api/resources?resource=br.com.badesul:badesul-sca&amp;metrics=coverage')
   		.reply(200, coverageRed, {'content-type': 'application/json; charset=utf-8'});		
+
+	nock('https://api.travis-ci.org').get('/repos/pasviegas/radiance.json')
+  		.reply(200, travisGreen, {'content-type': 'application/json; charset=utf-8'});		  		
 }
 
 var mockPage = {
@@ -117,6 +121,14 @@ var mockPage = {
 				from: "http://s028:9000/api/resources?resource=br.com.badesul:badesul-sca&amp;metrics=coverage",
 				source: "sonar",
 				threshold: "40",
+			}]
+	},{
+		name: "radiance",
+		metrics: [{
+				name: "build",
+				from: "https://api.travis-ci.org/repos/pasviegas/radiance.json",
+				source: "travis",
+				threshold: "100",
 			}]
 	}],
 };
