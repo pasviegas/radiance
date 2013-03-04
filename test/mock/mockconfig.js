@@ -8,6 +8,15 @@ function violations(artifact){
 	}
 }
 
+function travis(user, projectName){
+	return {
+		name: "build",
+		from: "https://api.travis-ci.org/repos/" + user + "/" + projectName + ".json",
+		source: "travis",
+		threshold: "100",
+	}
+}
+
 function build(projectName){
 	return {
 		name: "build",
@@ -36,6 +45,7 @@ function radiator(projectName, artifact, mock){
 }
 
 module.exports.violations = violations;
+module.exports.travis = travis;
 module.exports.build = build;
 module.exports.coverage = coverage;
 module.exports.radiator = radiator;

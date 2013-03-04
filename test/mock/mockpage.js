@@ -6,7 +6,7 @@ var coverageRed = [{msr: [{val: 0}]}];
 var yellow = {color: "yellow"};
 
 var green = {color: "blue"};
-var travisGreen = {lastBuildStatus: 0};
+var travisGreen = {last_build_status: 0};
 var coverageGreen = [{msr: [{val: 100}]}];
 
 var fakeRequests = function(){
