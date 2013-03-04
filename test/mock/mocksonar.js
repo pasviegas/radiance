@@ -1,10 +1,10 @@
 var nock = require("nock");
 var violationsRed = [{msr: [{val: 0}]}];
-var violationsYellow = [{msr: [{val: 48}]}];
+var violationsYellow = [{msr: [{val: 38}]}];
 var violationsGreen = [{msr: [{val: 80}]}];
 
 var coverageRed = [{msr: [{val: 0}]}];
-var coverageYellow = [{msr: [{val: 48}]}];
+var coverageYellow = [{msr: [{val: 38}]}];
 var coverageGreen = [{msr: [{val: 80}]}];
 
 var scope = nock('http://s028:9000');
