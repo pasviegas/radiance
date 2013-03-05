@@ -1,12 +1,16 @@
 var template  = require('../lib-cov/template')
+var engine  = require('../lib-cov/engine')
 var assert  = require('assert')
 var mockpage = require('./mock/mockpage')
 
 describe('Template', function(){
   it('should return 1 cause', function(done){
-    var causes = template.causes(mockpage.radiators[0]);
-    assert.equal(1, causes.length);
-    done();
+    mockpage.fakeRequests();
+    engine.refreshResults(mockpage, function(){
+      var causes = template.causes(mockpage.radiators[0]);
+      assert.equal(1, causes.length);
+      done();  
+    })
   })
   it('should be reduced to 1', function(done){
     var reduced = template.reduce(mockpage.radiators[0]);
