@@ -1,4 +1,4 @@
-var engine  = require('../lib/engine')
+var engine  = require('../lib-cov/engine')
 var fs      = require('fs')
 var assert  = require('assert')
 var jquery = require("jquery");
@@ -13,7 +13,7 @@ describe('Engine', function(){
     mockpage.fakeRequests();
     engine.writePage(mockpage, function(){
       jsdom.env({
-        html: fs.readFileSync("./lib/pages/" + mockpage.name + ".html").toString(),
+        html: fs.readFileSync("./lib-cov/pages/" + mockpage.name + ".html").toString(),
         done: function (errors, window) {
           var $ = jquery.create(window);
           done();
@@ -22,12 +22,12 @@ describe('Engine', function(){
     });
   })
   it('should delete all pages', function(done){
-    fs.writeFileSync("./lib/pages/mockPage.html", template);
+    fs.writeFileSync("./lib-cov/pages/mockPage.html", template);
     engine.deletePages(function(){
-      fs.readdir("./lib/pages/", function(err, files) {
+      fs.readdir("./lib-cov/pages/", function(err, files) {
         assert.equal(1, files.length);
         done();
       });
     });
-  })
+  })  
 })

@@ -1,4 +1,4 @@
-var sonar     = require('../lib/sources/sonar')
+var sonar     = require('../lib-cov/sources/sonar')
 var assert      = require('assert')
 var mocksonar = require('./mock/mocksonar')
 

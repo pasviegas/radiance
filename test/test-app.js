@@ -1,8 +1,8 @@
 var request = require('supertest')
-var app     = require('../lib/app')
+var app     = require('../lib-cov/app')
 var assert = require('assert')
 var mockpage = require('./mock/mockpage')
-var page     = require('../lib/page')
+var page     = require('../lib-cov/page')
 
 describe('POST /page/add', function(){
   it('should add new page and redirect', function(done){

@@ -1,10 +1,9 @@
-var template  = require('../lib/template')
+var template  = require('../lib-cov/template')
 var assert  = require('assert')
 var mockpage = require('./mock/mockpage')
 
 describe('Template', function(){
   it('should return 1 cause', function(done){
-    console.log(mockpage.radiators[0])
     var causes = template.causes(mockpage.radiators[0]);
     assert.equal(1, causes.length);
     done();

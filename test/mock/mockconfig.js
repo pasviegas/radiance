@@ -4,7 +4,7 @@ function violations(artifact){
 		name: "violations",
 		from: "http://s028:9000/api/resources?resource=" + artifact + "&amp;metrics=violations_density",
 		source: "sonar",
-		threshold: "85",
+		threshold: "90",
 	}
 }
 

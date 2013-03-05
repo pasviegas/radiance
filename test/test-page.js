@@ -1,4 +1,4 @@
-var page      = require('../lib/page')
+var page      = require('../lib-cov/page')
 var assert    = require('assert')
 var mockpage  = require('./mock/mockpage')
 

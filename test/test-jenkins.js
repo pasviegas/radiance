@@ -1,4 +1,4 @@
-var jenkins     = require('../lib/sources/jenkins')
+var jenkins     = require('../lib-cov/sources/jenkins')
 var assert      = require('assert')
 var mockJenkins = require('./mock/mockjenkins')
 

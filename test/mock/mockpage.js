@@ -111,7 +111,7 @@ var mockPage = {
 				source: "travis",
 				threshold: "100",
 			}]
-	}],
+	}]
 };
 
 module.exports = mockPage;
