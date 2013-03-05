@@ -5,7 +5,7 @@
   "description": "information radiator",
   "scripts": {
     "start": "node ./lib/server.js",
-    "test": "make jscoverage test"
+    "test": "make clear jscoverage test"
   },
   "main": "./lib/server.js",
   "repository": {

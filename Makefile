@@ -1,3 +1,9 @@
+clear:
+	@rm -rf lib-cov && rm -rf coverage
+
+mkdir:
+	@mkdir coverage
+
 test:
 	@./node_modules/.bin/mocha
 
@@ -10,7 +16,7 @@ test-lcov:
 test-xunit:
 	@./node_modules/.bin/mocha --reporter xunit > coverage/TEST-all.xml
 
-jscoverage:
+jscoverage: mkdir
 	@./node_modules/visionmedia-jscoverage/jscoverage lib lib-cov
 
-.PHONY: test test-cov test-lcov test-xunit jscoverage
+.PHONY: clear test test-cov test-lcov test-xunit jscoverage

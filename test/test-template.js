@@ -13,13 +13,19 @@ describe('Template', function(){
     })
   })
   it('should be reduced to 1', function(done){
-    var reduced = template.reduce(mockpage.radiators[0]);
-    assert.equal(1, reduced);
-    done();
+    mockpage.fakeRequests();
+    engine.refreshResults(mockpage, function(){
+      var reduced = template.reduce(mockpage.radiators[0]);
+      assert.equal(1, reduced);
+      done();
+    })
   })
   it('should return color yellow', function(done){
-    var status = template.status(mockpage.radiators[0]);
-    assert.equal("problem", status);
-    done();
+    mockpage.fakeRequests();
+    engine.refreshResults(mockpage, function(){
+      var status = template.status(mockpage.radiators[0]);
+      assert.equal("problem", status);
+      done();
+    })
   })
 })
