@@ -1,4 +1,5 @@
 var nock = require("nock");
+var _ = require("underscore");
 var config = require("./mockconfig");
 var red = {color: "red"};
 var coverageRed = [{msr: [{val: 0}]}];
@@ -114,5 +115,5 @@ var mockPage = {
 	}]
 };
 
-module.exports = mockPage;
+module.exports = _.clone(mockPage);
 module.exports.fakeRequests = fakeRequests;
