@@ -5,7 +5,10 @@
   "description": "information radiator",
   "scripts": {
     "start": "node ./lib/server.js",
-    "test": "make clear jscoverage test"
+    "test": "make clear jscoverage test travis-cov",
+    "travis-cov": {
+      "threshold": 100
+    }
   },
   "main": "./lib/server.js",
   "repository": {
@@ -30,8 +33,10 @@
     "jquery"    :  "1.8.x",
     "jsdom"     :  "0.5.x",
     "supertest" :  "0.5.x",
-    "visionmedia-jscoverage" :  "1.0.0",
-    "nock"      :  "0.16.x"
+    "nock"      :  "0.16.x",
+    "travis-cov":  "0.2.x",
+    "mocha-lcov-reporter":  "*",
+    "visionmedia-jscoverage" :  "1.0.0"
   },  
   "license": "MIT",
   "engines": {
