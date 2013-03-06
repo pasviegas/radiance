@@ -5,7 +5,7 @@
   "description": "information radiator",
   "scripts": {
     "start": "node ./lib/server.js",
-    "test": "make clear jscoverage test travis-cov",
+    "test": "make test travis-cov",
     "travis-cov": {
       "threshold": 100
     }

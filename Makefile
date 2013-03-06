@@ -4,19 +4,19 @@ clear:
 mkdir:
 	@mkdir coverage
 
-test:
+test: clear jscoverage
 	@./node_modules/.bin/mocha
 
-travis-cov:
+travis-cov: clear jscoverage
 	@./node_modules/.bin/mocha --reporter travis-cov
 
-test-cov:
+test-cov: clear jscoverage
 	@./node_modules/.bin/mocha --reporter html-cov > coverage/coverage.html
 
-test-lcov:
+test-lcov: clear jscoverage
 	@./node_modules/.bin/mocha --reporter mocha-lcov-reporter > coverage/coverage.lcov
 
-test-xunit:
+test-xunit: clear jscoverage
 	@./node_modules/.bin/mocha --reporter xunit > coverage/TEST-all.xml
 
 jscoverage: mkdir
